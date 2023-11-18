@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sujith.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,20 +31,23 @@ class MainActivity : ComponentActivity() {
             Row(
                 modifier = Modifier
                     .background(Color.Cyan)
-                    .fillMaxHeight(0.5f)
-                    .fillMaxWidth(),
+                    .fillMaxSize(),
                 horizontalArrangement = Arrangement.SpaceAround,
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Top
             ) {
 
 
                 Text(
                     text = "Hello, World!",
-                    modifier = Modifier.requiredWidth(150.dp).background(Color.Yellow)
+                    modifier = Modifier
+                        .requiredWidth(150.dp)
+                        .background(Color.Yellow)
                 )
                 Text(
                     text = "Jetpack Compose",
-                    modifier = Modifier.requiredWidth(40.dp).background(Color.Red),
+                    modifier = Modifier
+                        .requiredWidth(40.dp)
+                        .background(Color.Red),
                     maxLines = 1
                 )
 
