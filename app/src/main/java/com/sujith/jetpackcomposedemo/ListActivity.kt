@@ -8,8 +8,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -22,9 +24,9 @@ class ListActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LazyColumn {
-                items(9000) {
+                itemsIndexed(listOf("Hello", "world")) { indx, str ->
                     Text(
-                        text = "item $it",
+                        text = "str $indx",
                         fontSize = 22.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
