@@ -10,6 +10,10 @@ class DataBindingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding)
-        binding.myTexr.text = "Foo"
+        binding.student = getStudent()
+    }
+
+    private fun getStudent(): Student {
+        return Student("Joe", "joe@email.com")
     }
 }
